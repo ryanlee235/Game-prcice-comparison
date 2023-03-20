@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+{% block head %}
+<head>
+    <link href="{{ url_for('static', filename='index.css')}}" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+
+{% endblock %}
+{% block content %}
+<body>
+    <div class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-danger alert-dismissable fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="close" data-dismiss="alert">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            {% endfor %}
+        {% endif%}
+
+    {% endwith %}
+        <div class="background-pic">
+            <div class="picture-overlay">
+                <div class="search-bar">
+                    <form type="submit" method="POST" >
+                        <input type="text" placeholder="Enter a game you're looking for" name="Search">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+{% endblock %}
+
+
+</html>

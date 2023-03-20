@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+{% block head %}
+<head>
+    <link href="{{url_for('static', filename='games.css')}}" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+{% endblock %}
+
+{% block content %}
+<body>
+    <div class="container">
+        {% if cd_games != None%}
+            <div class="cdbox">
+                <div class="picture">
+                    <a href="{{cd_games.link}}">
+                        <img src="{{cd_games.picture}}">
+                    </a>
+                </div>
+                <div class="name">
+                    <p>{{cd_games.name}} CdKeys</p>
+                </div>
+                <div class="price">
+                    <p>{{cd_games.price}}</p>
+                </div>
+
+                <div class="buy-button">
+                    <a href="{{cd_games.link}}">
+                    <button type="button" name="buy">Buy</button>
+                    </a>
+                </div>
+            </div>
+
+        {% endif %}
+        {% if g2a_games !=None %}
+            <div class="cdbox">
+                <div class="picture">
+                    <a href="{{g2a_games.link}}">
+                        <img src="{{cd_games.picture}}">
+                    </a>
+                </div>
+                <div class="name">
+                    <p>{{g2a_games.name}} G2A</p>
+                </div>
+                <div class="price">
+                    <p>{{g2a_games.price}}</p>
+                </div>
+                <div class="buy-button">
+                    <a href="{{g2a_games.link}}">
+                    <button type="button" name="buy">Buy</button>
+                    </a>
+                </div>
+            </div>
+
+        {% endif %}
+        {% if i_games != None %}
+
+            <div class="cdbox">
+                <div class="picture">
+                    <a href="{{i_games.link}}">
+                        <img src="{{cd_games.picture}}">
+                    </a>
+                </div>
+                <div class="name">
+                    <p>{{i_games.name}} Instant Gaming</p>
+                </div>
+                <div class="price">
+                    <p>{{i_games.price}}</p>
+                </div>
+                <div class="buy-button">
+                    <a href="{{i_games.link}}">
+                    <button type="button" name="buy">Buy</button>
+                    </a>
+                </div>
+
+                <div class="instant">
+                    <h2>Instant Gaming</h2>
+                </div>
+            </div>
+
+        {% endif %}
+
+
+    </div>
+</body>
+{% endblock %}
+</html>
