@@ -1,1 +1,1 @@
-# Game-prcice-comparison
+# Game-price-comparison
